@@ -35,6 +35,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
       requestAnimationFrame(updateOpacity);
     }
-    updateOpacity();
+    if (fire.style.opacity == 0) {
+      return;
+    } else {
+      updateOpacity();
+    }
   }
 });
