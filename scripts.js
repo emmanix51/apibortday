@@ -40,4 +40,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     updateOpacity();
   }
+ 
+  fire.addEventListener("click", () => {
+    fire.style.opacity = "1";
+  });
 });
