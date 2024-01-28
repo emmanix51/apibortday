@@ -31,14 +31,13 @@ window.addEventListener("DOMContentLoaded", (event) => {
         dataArray.reduce((acc, val) => acc + val, 0) / bufferLength;
 
       const opacity = 1 - averageVolume / 50;
-      fire.style.opacity = opacity;
+      if (fire.style.opacity !== "0") {
+        fire.style.opacity = opacity < 0 ? "0" : opacity;
+      }
 
       requestAnimationFrame(updateOpacity);
     }
-    if (fire.style.opacity == 0) {
-      return;
-    } else {
-      updateOpacity();
-    }
+
+    updateOpacity();
   }
 });
